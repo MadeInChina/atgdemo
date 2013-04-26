@@ -4,7 +4,7 @@
  
 <%@ taglib uri="/dspTaglib" prefix="dsp"%>
 <%@ page isELIgnored="false" %>
-<dsp:importbean bean="/atg/userprofiling/ProfileFormHandler" />
+<dsp:importbean bean="/com/hrw/atg/demo/handler/LoginHandler" scope="request"/>
 <dsp:importbean bean="/atg/dynamo/droplet/ErrorMessageForEach"/>
 <dsp:importbean bean="/com/hrw/atg/demo/handler/ToRegisterHandler" />
 <head>
@@ -22,24 +22,23 @@
                     <tbody>
                         <tr>
                             <td>Username *</td>
-                            <td><dsp:input bean="ProfileFormHandler.value.login" maxlength="30" size="25" type="text" required="true"  /></td>
+                            <td><dsp:input bean="LoginHandler.value.login" maxlength="30" size="25" type="text" required="true"  /></td>
                         </tr>
  
                         <tr>
                             <td>Password *</td>
-                            <td><dsp:input bean="ProfileFormHandler.value.password" maxlength="30" size="25" type="password" required="true"  /></td>
+                            <td><dsp:input bean="LoginHandler.value.password" maxlength="30" size="25" type="password" required="true"  /></td>
                         </tr>
  
                         <td colspan="2">
-                                <dsp:input bean="ProfileFormHandler.login" type="submit" value="Log In" />
-                                <dsp:input bean="ProfileFormHandler.create" type="submit" value="Register" />
+                               <dsp:input bean="LoginHandler.login" type="submit" value="Log In" />
                                <dsp:input bean="ToRegisterHandler.ToRegister" type="submit" value="ToRegister" />
                                
                                <dsp:input bean="ToRegisterHandler.toRegisterErrorUrl" type="hidden" value="${pageContext.request.contextPath}/formhandler/register.jsp" />
                                <dsp:input bean="ToRegisterHandler.toRegisterSuccessUrl" type="hidden" value="${pageContext.request.contextPath}/formhandler/register.jsp" />
                                
-                                <dsp:input bean="ProfileFormHandler.loginSuccessURL" type="hidden" value="loginSuccess.jsp" />
-                                <dsp:input bean="ProfileFormHandler.loginErrorURL" type="hidden" value="loginError.jsp"/> 
+                                <dsp:input bean="LoginHandler.loginSuccessURL" type="hidden" value="loginSuccess.jsp" />
+                                <dsp:input bean="LoginHandler.loginErrorURL" type="hidden" value="loginError.jsp"/> 
                         </td>
                         </tr>
  
@@ -47,7 +46,7 @@
                             <td colspan="2">
                                 <ul>
                                     <dsp:droplet name="ErrorMessageForEach">
-                                        <dsp:param bean="ProfileFormHandler.formExceptions" name="exceptions"/>
+                                        <dsp:param bean="LoginHandler.formExceptions" name="exceptions"/>
                                         <dsp:oparam name="output">
                                             <li>
                                                 <dsp:valueof param="message"/>
