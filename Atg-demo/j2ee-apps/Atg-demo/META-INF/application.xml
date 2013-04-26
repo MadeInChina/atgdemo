@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE application PUBLIC "-//Sun Microsystems, Inc.//DTD J2EE Application 1.3//EN" "http://java.sun.com/dtd/application_1_3.dtd">
+
+<application>
+    <display-name>Atg-demo</display-name>
+    <description>Atg-demo ear file</description>
+    <module>
+        <web>
+            <web-uri>j2ee-web.war</web-uri>
+            <context-root>/atg-demo</context-root>
+        </web>
+    </module>
+</application>
+<!-- @version $Id: //product/Eclipse/main/plugins/atg.project/templates/application.xml#1 
+    $$Change: 425088 $ -->

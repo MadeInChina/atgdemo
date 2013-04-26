@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="{APP-NAME}" default="build.ear">
+
+<target name="build.war">
+
+ 	<war destfile="D:\atg\glpenv\ATG10.0.2\Atg-demo/j2ee-apps/j2ee-web.war" update="true" webxml="D:\atg\glpenv\ATG10.0.2\Atg-demo/j2ee-apps/Atg-demo/j2ee-web.war/WEB-INF/web.xml">
+	<fileset dir="D:\atg\glpenv\ATG10.0.2\Atg-demo/j2ee-apps/Atg-demo/j2ee-web.war">
+		<include name="**/*"/>
+		<exclude name="WEB-INF/web.xml"/>
+	</fileset>
+	</war>
+	<!--<place-holder-for-war-task/>-->
+ </target>
+
+<target name="build.ear" depends="build.war">
+  <ear destfile="D:\atg\glpenv\ATG10.0.2\Atg-demo/j2ee-apps/Atg-demo.ear" appxml="D:\atg\glpenv\ATG10.0.2\Atg-demo/j2ee-apps/Atg-demo/META-INF/application.xml">
+    <metainf dir="D:\atg\glpenv\ATG10.0.2\Atg-demo/j2ee-apps/Atg-demo/META-INF" includes="DYNAMO-INF/**/*"/>
+    <fileset dir="D:\atg\glpenv\ATG10.0.2\Atg-demo/j2ee-apps" includes="*.war,*.jar"/>
+  </ear>
+</target>
+</project>
+<!-- @version $Id: //product/Eclipse/main/plugins/atg.project/templates/build.xml#1 $$Change: 425088 $ -->
